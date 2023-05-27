@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    background-color: rgba(18, 68, 207, 0.9);
+} */
+
+.primary-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(18, 68, 207, 1);
+    position: fixed;
+    width: 100%;
+    z-index: 9997;
+
+}
+
+.primary-header .logo {
+    font-size: 1.25rem;
+    font-weight: 100;
+    margin-block: 1.5rem;
+    margin-left: 1rem;
+    color: white;
+    z-index: 9998;
+}
+
+.primary-header .toggle {
+    display: none;
+    color: white;
+
+    font-size: 1.3rem;
+    position: relative;
+    top: 1.3rem;
+    right: 1rem;
+    z-index: 99999;
+}
+
+.primary-header nav {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.primary-header ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+
+
+.primary-header ul li a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:375px) {
+    .primary-header .toggle {
+        display: block;
+    }
+
+    .primary-header nav {
+        position: absolute;
+        z-index: -1;
+
+        align-items: start;
+        justify-content: center;
+
+        /* background-image: linear-gradient(to bottom , rgba(255, 255, 255, 0.1) , rgb(122, 255, 255)); */
+        background-color: rgba(73, 67, 67, 0.9);
+        width: 100%;
+        height: 100vh;
+
+        padding-top: clamp(10rem,30vh,15.5rem);
+        /* margin-top: 4.35rem; */
+
+        transform: translateX(100%);
+        opacity: 0;
+        transition-duration: 750ms;
+        transition-timing-function: ease-out;    
+}
+
+    nav.active {
+        transform: translateX(0%);
+        opacity: 0.8;
+    }
+    
+    .primary-header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-header ul li a {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+}
+
+.hero {
+    height: 90vh;
+    min-height: 30rem;
+    background-color: aqua;
+}
+
+.about {
+    height: 90vh;
+    background-color: rgb(123, 34, 224);
+}
